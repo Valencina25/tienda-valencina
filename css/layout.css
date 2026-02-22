@@ -1,0 +1,91 @@
+/* Header */
+.header {
+    background: var(--color-white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm);
+}
+
+.logo {
+    font-family: var(--font-primary);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav a {
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.nav a:hover,
+.nav a.active {
+    color: var(--color-primary);
+    background: var(--color-accent);
+}
+
+.cart-link {
+    background: var(--color-accent);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Footer */
+.footer {
+    background: var(--color-primary-dark);
+    color: white;
+    text-align: center;
+    padding: var(--spacing-md) var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+/* Secciones */
+.section {
+    display: none;
+    padding: var(--spacing-lg) 0;
+}
+
+.section.active {
+    display: block;
+}
+
+.section-title {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
+}

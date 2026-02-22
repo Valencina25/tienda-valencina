@@ -1,0 +1,15 @@
+{
+  "name": "tienda-valencina",
+  "version": "1.0.0",
+  "description": "Tienda de productos artesanales y ecológicos en Valencina de la Concepción",
+  "main": "index.js",
+  "scripts": {
+    "dev": "servor . index.html 3000 --reload --browse",
+    "start": "servor . index.html 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.29.3"
+}
