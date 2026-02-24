@@ -265,3 +265,17 @@ document.addEventListener('DOMContentLoaded', () => {
   updateCartCount();
   updateStats();
 });
+
+window.renderProductos = renderProductos;
+window.renderDestacados = renderDestacados;
+window.renderCarrito = renderCarrito;
+window.updateCartCount = updateCartCount;
+window.showToast = showToast;
+window.renderAdminList = renderAdminList;
+window.refreshAll = refreshAll;
+window.editProducto = editProducto;
+window.deleteProducto = deleteProducto;
+window.addToCart = addToCart;
+window.updateCartItem = updateCartItem;
+window.removeCartItem = removeCartItem;
+window.showSection = showSection;

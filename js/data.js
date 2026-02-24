@@ -1,7 +1,7 @@
 const ADMIN_PASSWORD = "tienda2024";
 
 const PRODUCTOS_DEFAULT = [
-  { id: 1, nombre: "Miel Cruda de Azahar", categoria: "alimentacion", precio: 15.50, imagen: "imagenes/miel.jpg", productor: "Apicultura Los Alcores" },
+  { id: 1, nombre: "Miel Cruda de Azahar", categoria: "alimentacion", precio: 15.50, imagen: "imagenes/miel.jpg", productor: "Apiculture Los Alcores" },
   { id: 2, nombre: "Aceite de Oliva Virgen Extra", categoria: "alimentacion", precio: 18.90, imagen: "imagenes/aceite.jpg", productor: "Almazara El Viso" },
   { id: 3, nombre: "Crema Hidratante Aloe Vera", categoria: "cosmetica", precio: 12.30, imagen: "imagenes/crema.jpg", productor: "Cosmética Natural Sevilla" },
   { id: 4, nombre: "Jabón Artesanal de Lavanda", categoria: "cosmetica", precio: 6.50, imagen: "imagenes/jabon.jpg", productor: "Jabonería La Alpujarra" },
@@ -40,6 +40,7 @@ function addProducto(producto) {
   }
   productos.push(producto);
   saveProductos();
+  return producto;
 }
 
 function updateProducto(id, data) {
@@ -47,7 +48,9 @@ function updateProducto(id, data) {
   if (index !== -1) {
     productos[index] = { ...productos[index], ...data };
     saveProductos();
+    return productos[index];
   }
+  return null;
 }
 
 function removeProducto(id) {
@@ -89,3 +92,15 @@ function clearCarrito() {
 }
 
 initData();
+
+window.productos = productos;
+window.carrito = carrito;
+window.addProducto = addProducto;
+window.updateProducto = updateProducto;
+window.removeProducto = removeProducto;
+window.resetProductos = resetProductos;
+window.addToCarrito = addToCarrito;
+window.removeFromCarrito = removeFromCarrito;
+window.updateCantidadCarrito = updateCantidadCarrito;
+window.clearCarrito = clearCarrito;
+window.ADMIN_PASSWORD = ADMIN_PASSWORD;
