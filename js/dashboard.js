@@ -5,7 +5,7 @@ function renderProductos() {
   const container = document.getElementById('products-grid');
   if (!container) return;
   
-  container.innerHTML = productos.map(p => `
+  container.innerHTML = window.productos.map(p => `
     <div class="product-card">
       <div class="product-image">
         <img src="${p.imagen}" alt="${p.nombre}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><rect fill=%22%23f0f0f0%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2255%22 text-anchor=%22middle%22 fill=%22%23999%22 font-size=%2212%22>Sin imagen</text></svg>'">
@@ -22,7 +22,7 @@ function renderDestacados() {
   const container = document.getElementById('featured-products');
   if (!container) return;
   
-  const destacados = productos.slice(0, 4);
+  const destacados = window.productos.slice(0, 4);
   container.innerHTML = destacados.map(p => `
     <div class="product-card">
       <div class="product-image">
@@ -35,7 +35,7 @@ function renderDestacados() {
 }
 
 function addToCart(id) {
-  const producto = productos.find(p => p.id === id);
+  const producto = window.productos.find(p => p.id === id);
   if (producto) {
     addToCarrito(producto);
     updateCartCount();
@@ -112,7 +112,7 @@ function renderAdminList() {
   const container = document.getElementById('admin-list');
   if (!container) return;
   
-  container.innerHTML = productos.map(p => `
+  container.innerHTML = window.productos.map(p => `
     <tr>
       <td>${p.id}</td>
       <td>${p.nombre}</td>
@@ -127,7 +127,7 @@ function renderAdminList() {
 }
 
 function editProducto(id) {
-  const p = productos.find(prod => prod.id === id);
+  const p = window.productos.find(prod => prod.id === id);
   if (!p) return;
   
   document.getElementById('product-id').value = p.id;
@@ -169,7 +169,7 @@ function showToast(message) {
 // =============================
 function updateStats() {
   const statEl = document.getElementById('stat-products');
-  if (statEl) statEl.textContent = productos.length;
+  if (statEl) statEl.textContent = window.productos.length;
 }
 
 // =============================
