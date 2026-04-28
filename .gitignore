@@ -1,7 +1,8 @@
-cat > .gitignore << 'EOF'
 node_modules/
 .DS_Store
 Thumbs.db
 *.log
 .env
-EOF
+*:Zone.Identifier
+.imagenes/Zone.Identifier
+package-lock.json

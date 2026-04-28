@@ -1,14 +1,14 @@
 const ADMIN_PASSWORD = "tienda2024";
 
 const PRODUCTOS_DEFAULT = [
-  { id: 1, nombre: "Miel Cruda de Azahar", categoria: "alimentacion", precio: 15.50, imagen: "imagenes/aguacate.jpg", productor: "Apiculture Los Alcores" },
-  { id: 2, nombre: "Aceite de Oliva Virgen Extra", categoria: "alimentacion", precio: 18.90, imagen: "imagenes/botijo.jpg", productor: "Almazara El Viso" },
-  { id: 3, nombre: "Crema Hidratante Aloe Vera", categoria: "cosmetica", precio: 12.30, imagen: "imagenes/aguacate.jpg", productor: "Cosmética Natural Sevilla" },
-  { id: 4, nombre: "Jabón Artesanal de Lavanda", categoria: "cosmetica", precio: 6.50, imagen: "imagenes/botijo.jpg", productor: "Jabonería La Alpujarra" },
-  { id: 5, nombre: "Cebollas", categoria: "alimentacion", precio: 2.50, imagen: "imagenes/cebolla.jpg", productor: "Hortalizas Local" },
-  { id: 6, nombre: "Tomates", categoria: "alimentacion", precio: 3.00, imagen: "imagenes/tomate.jpg", productor: "Hortalizas Local" },
-  { id: 7, nombre: "Pimientos", categoria: "alimentacion", precio: 2.80, imagen: "imagenes/pimiento.jpg", productor: "Hortalizas Local" },
-  { id: 8, nombre: "Berenjenas", categoria: "alimentacion", precio: 2.20, imagen: "imagenes/berejena.jpg", productor: "Hortalizas Local" }
+  { id: 1, nombre: "Miel Cruda de Azahar", categoria: "alimentacion", precio: 15.50, imagen: "imagenes/flor1.jpg", productor: "Apiculture Los Alcores" },
+  { id: 2, nombre: "Aceite de Oliva Virgen Extra", categoria: "alimentacion", precio: 18.90, imagen: "imagenes/naranja.jpg", productor: "Almazara El Viso" },
+  { id: 3, nombre: "Crema Hidratante Aloe Vera", categoria: "cosmetica", precio: 12.30, imagen: "imagenes/flor.jpg", productor: "Cosmética Natural Sevilla" },
+  { id: 4, nombre: "Jabón Artesanal de Lavanda", categoria: "cosmetica", precio: 6.50, imagen: "imagenes/flor2.jpg", productor: "Jabonería La Alpujarra" },
+  { id: 5, nombre: "Cebollas", categoria: "alimentacion", precio: 2.50, imagen: "imagenes/cebollino.jpg", productor: "Hortalizas Local" },
+  { id: 6, nombre: "Tomates", categoria: "alimentacion", precio: 3.00, imagen: "imagenes/tomate rosa.jpg", productor: "Hortalizas Local" },
+  { id: 7, nombre: "Pimientos", categoria: "alimentacion", precio: 2.80, imagen: "imagenes/pimiento italiano.jpg", productor: "Hortalizas Local" },
+  { id: 8, nombre: "Berenjenas", categoria: "alimentacion", precio: 2.20, imagen: "imagenes/berejena morada.jpg", productor: "Hortalizas Local" }
 ];
 
 let productos = [];
@@ -79,11 +79,13 @@ function addToCarrito(producto) {
     carrito.push({ ...producto, cantidad: 1 });
   }
   saveCarrito();
+  window.carrito = carrito;
 }
 
 function removeFromCarrito(id) {
   carrito = carrito.filter(item => item.id !== id);
   saveCarrito();
+  window.carrito = carrito;
 }
 
 function updateCantidadCarrito(id, cantidad) {
@@ -91,12 +93,14 @@ function updateCantidadCarrito(id, cantidad) {
   if (item) {
     item.cantidad = Math.max(1, cantidad);
     saveCarrito();
+    window.carrito = carrito;
   }
 }
 
 function clearCarrito() {
   carrito = [];
   saveCarrito();
+  window.carrito = carrito;
 }
 
 initData();
@@ -110,5 +114,12 @@ window.resetProductos = resetProductos;
 window.addToCarrito = addToCarrito;
 window.removeFromCarrito = removeFromCarrito;
 window.updateCantidadCarrito = updateCantidadCarrito;
+function removePedido(id) {
+  let pedidos = JSON.parse(localStorage.getItem('tienda_pedidos') || '[]');
+  pedidos = pedidos.filter(p => p.id !== id);
+  localStorage.setItem('tienda_pedidos', JSON.stringify(pedidos));
+}
+
 window.clearCarrito = clearCarrito;
 window.ADMIN_PASSWORD = ADMIN_PASSWORD;
+window.removePedido = removePedido;
