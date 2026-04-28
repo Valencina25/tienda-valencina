@@ -1,14 +1,14 @@
 const ADMIN_PASSWORD = "tienda2024";
 
 const PRODUCTOS_DEFAULT = [
-  { id: 1, nombre: "Miel Cruda de Azahar", categoria: "alimentacion", precio: 15.50, imagen: "imagenes/flor1.jpg", productor: "Apiculture Los Alcores" },
-  { id: 2, nombre: "Aceite de Oliva Virgen Extra", categoria: "alimentacion", precio: 18.90, imagen: "imagenes/naranja.jpg", productor: "Almazara El Viso" },
-  { id: 3, nombre: "Crema Hidratante Aloe Vera", categoria: "cosmetica", precio: 12.30, imagen: "imagenes/flor.jpg", productor: "Cosmética Natural Sevilla" },
-  { id: 4, nombre: "Jabón Artesanal de Lavanda", categoria: "cosmetica", precio: 6.50, imagen: "imagenes/flor2.jpg", productor: "Jabonería La Alpujarra" },
-  { id: 5, nombre: "Cebollas", categoria: "alimentacion", precio: 2.50, imagen: "imagenes/cebollino.jpg", productor: "Hortalizas Local" },
-  { id: 6, nombre: "Tomates", categoria: "alimentacion", precio: 3.00, imagen: "imagenes/tomate rosa.jpg", productor: "Hortalizas Local" },
-  { id: 7, nombre: "Pimientos", categoria: "alimentacion", precio: 2.80, imagen: "imagenes/pimiento italiano.jpg", productor: "Hortalizas Local" },
-  { id: 8, nombre: "Berenjenas", categoria: "alimentacion", precio: 2.20, imagen: "imagenes/berejena morada.jpg", productor: "Hortalizas Local" }
+  {"id":1,"nombre":"Miel Cruda de Azahar","categoria":"alimentacion","precio":15.5,"imagen":"imagenes/flor1.jpg","productor":"Apiculture Los Alcores"},
+  {"id":2,"nombre":"Aceite de Oliva Virgen Extra","categoria":"alimentacion","precio":18.9,"imagen":"imagenes/naranja.jpg","productor":"Almazara El Viso"},
+  {"id":3,"nombre":"Crema Hidratante Aloe Vera","categoria":"cosmetica","precio":12.3,"imagen":"imagenes/flor.jpg","productor":"Cosmética Natural Sevilla"},
+  {"id":4,"nombre":"Jabón Artesanal de Lavanda","categoria":"cosmetica","precio":6.5,"imagen":"imagenes/flor2.jpg","productor":"Jabonería La Alpujarra"},
+  {"id":5,"nombre":"Cebollas","categoria":"alimentacion","precio":2.5,"imagen":"imagenes/cebollino.jpg","productor":"Hortalizas Local"},
+  {"id":6,"nombre":"Tomates","categoria":"alimentacion","precio":3,"imagen":"imagenes/tomate rosa.jpg","productor":"Hortalizas Local"},
+  {"id":7,"nombre":"Pimientos","categoria":"alimentacion","precio":2.8,"imagen":"imagenes/pimiento italiano.jpg","productor":"Hortalizas Local"},
+  {"id":8,"nombre":"Berenjenas","categoria":"alimentacion","precio":2.2,"imagen":"imagenes/berejena morada.jpg","productor":"Hortalizas Local"}
 ];
 
 let productos = [];
