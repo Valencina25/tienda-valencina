@@ -1,4 +1,4 @@
-const ADMIN_PASSWORD = "tienda2024";
+const ADMIN_PASSWORD = "juan1962";
 
 const PRODUCTOS_DEFAULT = [
   {"id":1,"nombre":"Miel Cruda de Azahar","categoria":"alimentacion","precio":15.5,"imagen":"imagenes/flor1.jpg","productor":"Apiculture Los Alcores"},
